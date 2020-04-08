@@ -1,0 +1,120 @@
+body { background:#bbb;}
+
+#Perfilito {
+  width:800px;
+  border:10px solid white; 
+  background:#e1e1e1;
+}
+
+.Header-Profile {
+  background-color:#ddd;
+  background-image: url(https://www.elsetge.cat/myimg/f/120-1206820_one-punch-man-hd-wallpaper-one-punch-man.jpg);
+  background-size:cover;
+  background-blend-mode: soft-light;
+  padding:20px;
+  text-align:Center;
+}
+
+.Avatar-Profile img {
+  width:160px!important;
+  height:160px!important;
+  border:10px solid white;
+  margin-top:30px;
+}
+
+.Name-profile a { font-family:montserrat;
+font-size:25px;
+font-weight:bold; margin-top:20px;
+color:black; display:block;
+text-decoration:none;
+}
+
+.As-Prof { font-family: arial;
+letter-spacing:8px; font-size:9px;
+margin: 10px 0;}
+
+.Rango-Profile {
+  border:1px solid brown;
+  border-radius:10px;
+  width:200px;
+  padding:5px;
+  margin: auto;
+  font-family: montserrat; font-size:11px;
+  font-weight:bold;
+  color:black; text-transform:uppercase;
+  background: white;
+}
+
+.Admin-Profile { background:white; padding:10px 0; margin-bottom:20px;}
+
+.Admin-Profile a { 
+  display:inline-block;
+  background:#f4f4f4; 
+  border:1px solid #ddd;
+  font-family:montserrat;
+  font-weight:bold;
+  text-decoration:none; color:black;
+  text-transform:uppercase;
+  font-size:10px; margin-left:10px;
+  border-radius:5px; padding:5px;
+}
+
+.Admin-Profile a i { color:red;}
+
+.Online-P { float:right;
+display:block;
+margin-right:15px;
+font-family:montserrat;
+text-transform:uppercase;
+font-size:12px;
+font-weight:bold;
+  margin-top:2px;
+}
+
+.Online-P i { 
+  color:green;
+  font-size:1.23rem;
+  padding-right:5px;
+  vertical-align:-4px;}
+
+.Top-Profile {
+  margin:30px;
+}
+
+.Data-Profiles {
+  background:#fff;
+  padding:10px;
+  text-align:center;
+  font-family:montserrat;
+  color:#222;
+  display:inline-block;
+  margin:0 0 5px 0;
+  width:162px;
+  font-size:10px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+.Two-Data {
+  display:block;
+  background:#fff;
+  padding:10px;
+  text-align:center;
+  font-size:10px;
+  font-family:calibri;
+  color:#333;
+  margin:10px 0; 
+}
+
+.Bottom-Profile {
+  margin:-10px 30px 20px;
+}
+
+.Prof-Icon {
+  background:#fff;
+  display:inline-block;
+  padding:10px; width:30px;
+  text-align:center;
+  font-size:28px;
+  color:#444;
+}

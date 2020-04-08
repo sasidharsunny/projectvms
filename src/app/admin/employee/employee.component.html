@@ -1,0 +1,288 @@
+
+
+<div>
+  <label for="x">Search</label>
+   <input type="text"  id="x" [(ngModel)]="SearchTerm">
+</div>
+
+
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Open details
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Employee registration</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+
+
+
+
+        <form #ref="ngForm" (ngSubmit)="submitform(ref.value)">
+
+
+          <div class="form-group">
+            <label for="x">vehicle number</label>
+            <input type="text" class="form-control" id="x" name="vehiclenumber" required minlength="10"
+              #ref1="ngModel" ngModel>
+            <div *ngIf="ref1.errors.minlength">*minimum length of the number should be 10</div>
+            <div *ngIf="ref1.invalid&&ref1.touched" class="alert alert-danger">
+              this field is required
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="c"> Employeeid</label>
+            <input type="text" class="form-control" id="c" name="empid" required pattern="[A-Z][a-z]\d\d\d"
+              #ref2='ngModel' ngModel>
+            <div *ngIf="ref2.invalid&&ref2.touched" class="alert alert-danger">
+              this field is required
+            </div>
+            <div *ngIf="ref2.errors.pattern" class="alert alert-danger">the first leter should be uppercase &lowercase followed by
+             3em digits
+
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <div class="form-group">
+            <label for="y">Entername</label>
+            <input type="text" class="form-control" id="y" name="ename" required ngModel #ref3="ngModel">
+            <div *ngIf="ref3.invalid&&ref3.touched" class="alert alert-danger">
+              this field is required
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="z">Enterphoneno</label>
+            <input type="text" class="form-control" id="z" name="empphone" required ngModel #ref4='ngModel'>
+            <div *ngIf="ref4.invalid&&ref4.touched" class="alert alert-danger">
+              this field is required
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+            <label for="a">Email</label>
+            <input type="text" class="form-control" id="a" name="empemail" ngModel required #ref5="ngModel">
+            <div *ngIf="ref5.invalid&&ref5.touched" class="alert alert-danger">
+              this field is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="b">password</label>
+            <input type="text" class="form-control" id="b" name="emppassword" ngModel pattern="[A-Z][a-z]\d\d\d"
+              required #ref6="ngModel">
+            <div *ngIf="ref6.invalid&&ref6.touched" class="alert alert-danger">
+              this field is required
+            </div>
+            <div *ngif="ref6.errors.pattern" class="alert alert-danger">
+              first letter should be uppercase secound should be lowercase next three digits
+            </div>
+          </div>
+          <!---- <div class="form-group">
+            <label for="">Enter gender</label>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="vasanth"ngModel required #ref="ngModel">male
+              </label>
+            </div>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optradio" ngModel required #ref6="ngModel">female
+            </label>
+            <div *ngIf="ref.invalid&&ref.touched" class="alert alert-danger">
+              this field is required
+            </div>
+          </div>---->
+
+
+
+          <div class="text-right">
+            <button class="btn btn-success" type="submit">submit</button>
+          </div>
+
+
+
+
+
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<table class="table table-bordered">
+  <thead>
+
+
+    <th>Enter vehiclenumber</th>
+    <th> Employeeid</th>
+    <th>Entername</th>
+    <th>Enterphoneno</th>
+    <th>Enter email</th>
+    <th>Enter password</th>
+
+  </thead>
+  <tr *ngFor="let i of empdata | adminsearch:SearchTerm" >
+    <td>{{i.vehiclenumber}}</td>
+    <td>{{i.empid}}</td>
+    <td>{{i.ename}}</td>
+    <td>{{i.empphone}}</td>
+    <td>{{i.empemail}}</td>
+    <td>{{i.emppassword}}</td>                                
+     
+<td><button (click)="delete(i.vehiclenumber)">x</button></td>
+<td><button class="btn btn-success" data-toggle="modal" data-target="#myModal1" (click)="updatedata(i)">edit</button> </td>
+
+    </tr>
+  
+  
+    </table>
+
+
+
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+
+
+          <form #reff="ngForm" (ngSubmit)="update(reff.value)">
+
+  
+              <div class="form-group">
+                <label for="x">vehiclenumber</label>
+                <input type="text" class="form-control" id="x" name="vehiclenumber" [(ngModel)]=obj.vehiclenumber>
+              </div>
+          
+          
+              <div class="form-group">
+                <label for="y">Entername</label>
+                <input type="text" class="form-control" id="y" name="empid" [(ngModel)]=obj.empid>
+              </div>
+          
+            
+              <div class="form-group">
+                  <label for="z">Enterphone</label>
+                  <input type="text" class="form-control" id="z" name="ename" [(ngModel)]=obj.ename>
+                </div>
+          
+          
+                <div class="form-group">
+                  <label for="a">Enteremail</label>
+                  <input type="email" class="form-control" id="a" name="empphone" [(ngModel)]=obj.empphone>
+                </div>
+          
+                 <div class="form-group">
+                  <label for="b">password</label>
+                  <input type="text" class="form-control" id="b" name="empemail" [(ngModel)]=obj.empemail>
+                </div>
+          
+          
+
+                <div class="text-right">
+                    <button class="btn btn-success" type="submit">submit</button>
+                </div>
+
+             
+                
+             
+
+
+          </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

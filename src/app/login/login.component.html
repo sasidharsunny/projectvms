@@ -1,0 +1,213 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-------------------new login form-->
+
+
+<div class="container-fluid img">
+<div class="box">
+  <h2>Login</h2>
+  <form #ref="ngForm" (ngSubmit)="submitlogin(ref.value)">
+  
+    <div class="inputBox">
+      <input type="text" name="empid" required onkeyup="this.setAttribute('value', this.value);" 
+      value="" ngModel #ref1="ngModel" required minlength="8">
+      <div *ngIf="ref1.invalid&&(ref1.touched||ref1.dirty)" class="alert alert-danger"> 
+        <div *ngIf="ref1.errors.required">*This field is manditatory</div>
+        <div *ngIf="ref1.errors.minlength">Name should me minimum 8 letters</div>
+      </div>
+      <label>Username</label>
+    </div>
+    <div class="inputBox">
+      <input type="password" name="emppassword" required value=""
+             onkeyup="this.setAttribute('value', this.value);" ngModel  #ref2="ngModel" required pattern="[A-Z][a-z][a-z][a-z]\d\d">
+             <div *ngIf="ref2.invalid&&(ref2.touched||ref2.dirty)" class="alert alert-danger">
+       <div *ngIf="ref2.errors.required">*This field is manditatory</div>
+        <div *ngIf="ref2.errors.pattern">*First letter should be Uppercase and next 3 is in lowercase</div>
+
+             </div>
+      <label>Password</label>
+    </div>
+    <input type="submit" name="sign-in" value="Sign In">
+
+         <!---radio buttons-->
+
+         <div class="text-white">
+           <label for="">select role</label>
+
+           <input type="radio" id="a" name="role" value="admin" class="" required ngModel>
+            <label for="a">Admin</label>
+
+            <input type="radio" id="b" name="role" value="security" class="" required ngModel>
+            <label for="b">Security</label>
+
+            <input type="radio" id="c" name="role" value="employee" class="" required ngModel>
+            <label for="c">Employee</label>
+
+           
+         </div>
+
+
+
+            
+         <div class="text-right">
+          <button class="btn btn-success" name="register"   type="submit">submit</button>
+      </div>
+
+
+
+
+
+
+
+
+
+
+  </form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---<div class="container-fluid img">
+  <div class="box">
+    <h2>Login</h2>
+  
+<form #ref="ngForm" (ngSubmit)="submitlogin(ref.value)">
+
+    <div class="container">
+
+        <div class="jumbotron">
+
+             <h1 class="text-center">LOGIN</h1>
+              
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6 mx auto ">
+
+                    <div class="form-group">
+                        <label for="x">user name</label>
+                        <input type="text" id="x" required ngModel #ref1="ngModel" name="ename" class="form-control">
+                        <div *ngIf="ref1.invalid&&ref1.touched" class="alert alert-danger">
+                            this field is required
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="y">password</label>
+                        <input type="password" id="y" required ngModel #ref2="ngModel" name="password" class="form-control">
+                        <div *ngIf="ref2.invalid&&ref2.touched" class="alert alert-danger">
+                            this field is required
+                        </div>
+                    </div>--------->
+
+
+<!-----radio--
+
+<div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optradio">Admin
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optradio">security
+    </label>
+  </div>
+  <div class="form-check disabled">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optradio" disabled>employee
+    </label>
+  </div>
+  ---------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <!----<div class="text-center">
+                        <button class="btn btn-info " button type="submit">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</form>-----
+
+
+</div>
+</div>---->

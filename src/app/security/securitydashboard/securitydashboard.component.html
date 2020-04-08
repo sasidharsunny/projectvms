@@ -1,0 +1,32 @@
+<p>securitydashboard works!</p>
+<!-- A vertical navbar -->
+<div class="row">
+    <div class="col-sm-2">
+  <nav class="navbar bg-light">
+  
+  
+  
+      <!-- Links -->
+      <ul class="navbar-nav nav-pills flex-column">
+  
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" routerLink="securityprofile">Securityprofile</a>
+        </li><br>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" routerLink="securityempdetails">Securityempdetails</a>
+        </li><br>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="pill" routerLink="securitylogbook">securitylogbook</a>
+         </li><br>
+       
+  
+      </ul>
+    
+    </nav>
+    </div>
+    <div class="col-sm-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
+  
